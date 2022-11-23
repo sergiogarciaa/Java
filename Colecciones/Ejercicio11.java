@@ -61,31 +61,32 @@ public class Ejercicio11 {
             default: System.err.println("El dia introducido no es válido o no está en formato texto");
                 break;
         }
-    if(convert>0 && convert<=6){
+    if(convert>=0 && convert<=6){
 
         sumaDia = (convert + avanzar) % 7;
 
+        System.out.print("Dentro de " + avanzar + " dias será");
         switch (sumaDia) {
             case 0:
-                System.out.println("Dentro de " + avanzar + " dias sera Domingo");
+                System.out.println(" Domingo");
                 break;
             case 1:
-                System.out.println("Dentro de " + avanzar + " dias sera Lunes");
+                System.out.println(" Lunes");
                 break;
             case 2:
-                System.out.println("Dentro de " + avanzar + " dias sera Martes");
+                System.out.println(" Martes");
                 break;
             case 3:
-                System.out.println("Dentro de " + avanzar + " dias sera Miercoles");
+                System.out.println(" Miercoles");
                 break;
             case 4:
-                System.out.println("Dentro de " + avanzar + " dias sera Jueves");
+                System.out.println(" Jueves");
                 break;
             case 5:
-                System.out.println("Dentro de " + avanzar + " dias sera Viernes");
+                System.out.println(" Viernes");
                 break;
             case 6:
-                System.out.println("Dentro de " + avanzar + " dias sera Sabado");
+                System.out.println(" Sabado");
                 break;
         }
     }
