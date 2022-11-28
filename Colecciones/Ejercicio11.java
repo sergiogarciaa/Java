@@ -1,4 +1,6 @@
+package EjerciciosED;
 // Alumno: García Barrera, Sergio
+
 
 import java.util.Scanner;
 
@@ -21,46 +23,51 @@ public class Ejercicio11 {
         System.out.println();
         System.out.println();
         System.out.println("Introduce un dia de la semana escrito y debe empezar por mayúsculas (Si deseas salir escribe [fin]): ");
-        dia = sc.next();
+        // toLowerCase convierte lo introducido a minusculas y así puedo operar con minusculas
+        dia = sc.next().toLowerCase();
 
+        // Si dia=fin
         if(dia.equals("fin")){
             System.out.println("Ha salido del programa");
             bool = false;
         }
-        else if(dia.equals("Lunes") || dia.equals("Martes") || dia.equals("Miercoles") || dia.equals("Jueves") || dia.equals("Viernes") || dia.equals("Sabado") || dia.equals("Domingo")){
+        // Comprueba si es un ida de la semana
+        else if(dia.equals("lunes") || dia.equals("martes") || dia.equals("miercoles") || dia.equals("jueves") || dia.equals("viernes") || dia.equals("sabado") || dia.equals("domingo")){
             System.out.println("Introduce cuantos dias quiere avanzar: ");
             nuevoDia = sc.nextInt();
 
             diaSemana(dia, nuevoDia);
         }
 
-
-}while (bool);
-        sc.close();
-    }
+//Mientras que el booleano sea verdadero
+	}while (bool);
+	        sc.close();
+	    }
 
     public static int diaSemana(String diadelasemana, int avanzar) {
         int convert = -1;
         int sumaDia = 0;
+        // Paso el string a un entero
         switch (diadelasemana)
         {
-            case "Domingo": convert = 0;
+            case "domingo": convert = 0;
                 break;
-            case "Lunes": convert = 1;
+            case "lunes": convert = 1;
                 break;
-            case "Martes": convert = 2;
+            case "martes": convert = 2;
                 break;
-            case "Miercoles": convert = 3;
+            case "miercoles": convert = 3;
                 break;
-            case "Jueves": convert = 4;
+            case "jueves": convert = 4;
                 break;
-            case "Viernes": convert = 5;
+            case "viernes": convert = 5;
                 break;
-            case "Sabado": convert = 6;
+            case "sabado": convert = 6;
                 break;
             default: System.err.println("El dia introducido no es válido o no está en formato texto");
                 break;
         }
+        //Si es un valor entre 0 y 6 ->
     if(convert>=0 && convert<=6){
 
         sumaDia = (convert + avanzar) % 7;
@@ -90,6 +97,7 @@ public class Ejercicio11 {
                 break;
         }
     }
+    // Si lo anterior no funciona entonces los datos han sido erroneos
     else{
         System.err.println("No se ha podido realizar el cálculo, los datos han sido erróneos");
     }
