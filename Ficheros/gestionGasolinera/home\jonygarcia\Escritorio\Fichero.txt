@@ -1,2 +1,0 @@
-Nombre 	 Apellidos 	 Veterinario
-sergio  garcia  true
